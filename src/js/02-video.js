@@ -10,6 +10,6 @@ const CURRENT_TIME_KEY = "videoplayer-current-time";
     localStorage.setItem(CURRENT_TIME_KEY, JSON.stringify(time))
 }
 player.on('timeupdate', throttle(onPlay, 1000))
-const savedTime = JSON.parse(localStorage.getItem(CURRENT_TIME_KEY));
+const savedTime = JSON.parse(localStorage.getItem(CURRENT_TIME_KEY)) || 0;
 player.setCurrentTime(savedTime);
 // console.log(JSON.parse(savedTime))
